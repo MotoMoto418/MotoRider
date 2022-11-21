@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Navbar */
+.container {
+  font-family: 'Inter', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.mybtn {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  margin-right: 75px;
+}
+
+.navbar-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900 !important;
+  font-size: 2rem !important;
+  margin-left: 75px;
+}
+
+.nav-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.link {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: gray;
+}
+
+
+/* Landing Page */
+.landing-banner-image {
+  background-image: url('./resources/duca-bg.jpg');
+  background-size: cover;
+}
+
+.info-txt {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin-right: 60%;
+}
+
+.container-txt {
+  width: 90%;
+}
+
+.home {
+  margin-right: 40px;
+}
+
+.signup {
+  margin-right: 80px;
+}
+
+
+/* Signup and Signin */
+.card-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  padding: 30px 10%;
+}
+
+.signup-container {
+  margin: 20px 200px;
+  text-align: center;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 30px auto;
+}
+
+.my-font {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mylabel {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.rule {
+  height: 8px;
+  background-color: black;
+  opacity: 100;
+  margin-bottom: 30px;
+}
+
+.signup-btn {
+  font-weight: 700;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  margin: 40px auto;
+}
+
+.info-container {
+  margin: 40px 30px;
+}
+
+.signin-link {
+  color: black;
+}
+
+.signin-link:hover {
+  color: gray;
+}
+
+
+/* Home Page */
+.home-banner-image {
+  background-image: url('./resources/garage-bg.png');
+  background-size: cover;
+}
+
+.profile {
+  margin-right: 80px
+}
+
+
+/* Tiletable */
+.table-container {
+  margin-top: 40px;
+  height: 80%;
+  width: 95%;
+  background-color: red;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+
+
+/* Tile */
+.tile-card {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.tile-hr {
+  width: 85%;
 }
