@@ -6,10 +6,10 @@ export default function Navbar(props) {
       <div className="container">
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
           <a className="navbar-brand nav-margin" href="/">
-            MOTODRIVER.
+            MOTORIDER.
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler toggler-btn"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"

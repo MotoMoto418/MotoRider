@@ -2,6 +2,7 @@ import Landing from "./components/Landing";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
 import Home from "./components/Home";
+import Rent from "./components/Rent";
 import Navibar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           <Route path="/signin" element={<Signin/>} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/rent" element={<Rent/>} />
         </Routes>
       </BrowserRouter>
     </div>
