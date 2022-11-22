@@ -34,6 +34,10 @@
   color: gray;
 }
 
+.toggler-btn {
+  margin-right: 80px;
+}
+
 
 /* Landing Page */
 .landing-banner-image {
@@ -134,7 +138,7 @@
 }
 
 .profile {
-  margin-right: 80px
+  margin-right: 85px
 }
 
 
@@ -143,9 +147,30 @@
   margin-top: 40px;
   height: 80%;
   width: 95%;
-  background-color: red;
+  /* background-color: red; */
   overflow-y: auto;
   overflow-x:hidden;
+  padding: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(87, 87, 87); 
 }
 
 
@@ -156,4 +181,48 @@
 
 .tile-hr {
   width: 85%;
+}
+
+.tile-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rent-btn {
+  margin-top: 30px;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+
+/* Profile  */
+.profile-txt {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.dropdown-container {
+  padding: 0;
+}
+
+
+/* Rent */
+.rent-card {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.rent-container {
+  padding: 40px;
+}
+
+.scheme-info {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.price-info {
+  margin-left: 30px;
 }

@@ -4,7 +4,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
 import { CardActionArea } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -15,43 +14,51 @@ export default function Tile(props) {
     },
   });
 
-  const nameTheme = createTheme({
+  const brandTheme = createTheme({
     typography: {
-      fontSize: 25,
+      fontSize: 15,
+      fontWeight: 800,
     },
   });
 
-  const desTheme = createTheme({
+  const modelTheme = createTheme({
     typography: {
-      fontFamily: ["Inter", "sans-serif"].join(","),
+      fontSize: 13,
+      fontWeight: 800,
     },
   });
 
   return (
     <>
-      <div className="col-lg-3">
-        <ThemeProvider theme={uniTheme}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="300"
-                image={props.image}
-                alt={props.alt}
-              />
-              <CardContent>
-                <ThemeProvider theme={nameTheme}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {props.name}
-                  </Typography>
-                </ThemeProvider>
-                <Typography variant="body2" color="text.secondary">
-                  {props.des}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </ThemeProvider>
+      <div className="col-lg-3 tile-container">
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <ThemeProvider theme={uniTheme}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image={props.image}
+                  alt={props.alt}
+                />
+                <CardContent>
+                  <ThemeProvider theme={brandTheme}>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {props.brand}
+                    </Typography>
+                  </ThemeProvider>
+                  <ThemeProvider theme={modelTheme}>
+                    <Typography variant="body2" color="text.secondary">
+                      {props.model}
+                    </Typography>
+                  </ThemeProvider>
+                  {/* <button type="button" class="btn btn-dark">RENT</button> */}
+                  <a className="btn btn-dark rent-btn container" href="/rent">RENT</a>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </ThemeProvider>
+        </div>
       </div>
     </>
   );

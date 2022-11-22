@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 
-
-export default function Signup() {
-  const [user, setUser] = useState({
-    userName: "",
+var _user = {
+  userName: "",
     emailID: "",
     pword: "",
     cPword: "",
-  });
+}
+
+export default function Signup() {
+  // const [user, setUser] = useState({
+  //   userName: "",
+  //   emailID: "",
+  //   pword: "",
+  //   cPword: "",
+  // });
+
+  const [user, setUser] = useState(_user);
 
   let name, value;
 
