@@ -3,9 +3,13 @@ import React from "react";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 
-import Image from "../resources/thrux-tile.png";
+import Image from "../resources/duca-bg.jpg";
 
 export default function Rent() {
+  const handleClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
       <Navbar
@@ -40,11 +44,13 @@ export default function Rent() {
                 </div>
                 <div className="col-lg-8">
                   <div className="card-body">
-                    <h5 className="card-title my-font">DUCATI THRUXTON RS</h5>
+                    <h5 className="card-title my-font mt-0">
+                      DUCATI THRUXTON RS
+                    </h5>
 
-                    <div className="row">
-                      
+                    <div className="row rent-info-container">
                       <div className="col-lg-6 my-font">
+                        <h5 className="scheme-info">TECHNICAL INFO:</h5>
                         <p>
                           Engine Type: Liquid-cooled, 8-valve, SOHC, 270° crank
                           angle parallel-twin
@@ -66,9 +72,27 @@ export default function Rent() {
                         </div>
                       </div>
                     </div>
-                    <a className="btn btn-dark rent-btn container" href="/rent">
-                      RENT NOW
-                    </a>
+
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <a
+                          className="btn btn-outline-dark rent-btn container"
+                          href="/home"
+                        >
+                          BACK
+                        </a>
+                      </div>
+
+                      <div className="col-lg-6">
+                        <a
+                          className="btn btn-dark rent-btn container"
+                          href="/rent"
+                          onClick={handleClick}
+                        >
+                          RENT NOW
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
