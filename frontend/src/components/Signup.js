@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-var _user = {
-  userName: "",
+export default function Signup() {
+  // Handles Form Inputs
+  const [user, setUser] = useState({
+    userName: "",
     emailID: "",
     pword: "",
     cPword: "",
-}
-
-export default function Signup() {
-  // const [user, setUser] = useState({
-  //   userName: "",
-  //   emailID: "",
-  //   pword: "",
-  //   cPword: "",
-  // });
-
-  const [user, setUser] = useState(_user);
+  });
 
   let name, value;
 
@@ -28,20 +20,46 @@ export default function Signup() {
 
   const [isError, setIsError] = useState(false);
 
+  // Handles Password Confirmation on Frontend
   const validatePword = (event) => {
     name = event.target.name;
     value = event.target.value;
 
-    
-
     if (user.pword !== user.cPword) {
       setIsError(true);
-    } else  if (user.pword === user.cPword){
+    } else if (user.pword === user.cPword) {
       setIsError(false);
     }
 
     setUser({ ...user, [name]: value });
   };
+
+  // Handles Form Submission
+  const [isUser, setIsUser] = useState(false);
+
+  const handleSubmit = async () => {
+    const data = user;
+
+    const result = await fetch('http://localhost:4000/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'aplication/json'
+      },
+      body: JSON.stringify(data)
+    }).then((response) => response.json())
+    .then((data) => {
+      console.log("Success", data);
+    })
+    .catch((err) => {
+      console.error("Error: ", err);
+    });
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      fetch('http://localhost:4000/signup')
+    }
+  }, [])
 
   return (
     <>
@@ -50,7 +68,7 @@ export default function Signup() {
           <div className="card-body">
             <h5 className="card-title my-font">SIGN UP</h5>
             <hr className="rule" />
-            <form className="my-font">
+            <form className="my-font" onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-lg-6">
                   <div className="mb-3 info-container">
@@ -150,7 +168,10 @@ export default function Signup() {
               </button>
 
               <p className="my-font">
-                Already have an account? <a href='/signin' className="signin-link my-font">Sign In.</a>
+                Already have an account?{" "}
+                <a href="/signin" className="signin-link my-font">
+                  Sign In.
+                </a>
               </p>
             </form>
           </div>
