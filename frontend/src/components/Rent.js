@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 
-import Image from "../resources/duca-bg.jpg";
+import Image from "../resources/thrux-tile.png";
 
 export default function Rent() {
   const handleClick = (event) => {
@@ -26,7 +26,7 @@ export default function Rent() {
             </a>
             <ul className="dropdown-menu dropdown-container">
               <li>
-                <Profile name="SARANGA" />
+                <Profile name="MOTOMOTO" />
               </li>
             </ul>
           </li>
@@ -45,7 +45,7 @@ export default function Rent() {
                 <div className="col-lg-8">
                   <div className="card-body">
                     <h5 className="card-title my-font mt-0">
-                      DUCATI THRUXTON RS
+                      TRIUMPH THRUXTON RS
                     </h5>
 
                     <div className="row rent-info-container">

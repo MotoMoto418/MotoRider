@@ -30,7 +30,7 @@ export default function Home() {
             </a>
             <ul className="dropdown-menu dropdown-container">
               <li>
-                <Profile name="SARANGA" />
+                <Profile name="MOTOMOTO" />
               </li>
             </ul>
           </li>

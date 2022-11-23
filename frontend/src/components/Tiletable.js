@@ -1,119 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Tile from "./Tile";
 
-import image1 from '../resources/thrux-tile.png'
-import image2 from '../resources/duca-bg.jpg'
+import thrux from '../resources/thrux-tile.png'
+import cbr from '../resources/cbr-tile.jpg'
+import kawa650 from '../resources/kawa650-tile.webp'
+import duca from '../resources/duca-tile.webp'
+import yamaha from '../resources/yamaha-tile.png'
+import kawa1000 from '../resources/kawa1000-tile.png'
+import trident from '../resources/trident-tile.webp'
+import street from '../resources/street-tile.webp'
 
 export default function Tiletable() {
-    // const n = [
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
+    const [bikeData, setBikeData] = useState([]);
 
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await fetch('http://localhost:4000/home');
 
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-
-    //     {
-    //         image: {image},
-    //         alt: "thrux",
-    //         name: "THRUXTON RS",
-    //         des: "BIKE",
-    //     },
-    // ];
+        const jsonResult = result.json();
+        setBikeData([...bikeData, jsonResult]);
+      }
+    })
 
   return (
     <>
       <div className="center table-container">
         <div className="row">
         <Tile 
-            image={image1}
+            image={thrux}
             alt="thrux"
-            brand="THRUXTON RS"
-            model="BIKE"
+            brand="TRIUMPH"
+            model="THRUXTON RS"
         />
         <Tile 
-            image={image2}
-            alt="thrux"
+            image={cbr}
+            alt="honda"
+            brand="HONDA"
+            model="CB650R"
+        />
+        <Tile 
+            image={kawa650}
+            alt="kawa"
+            brand="KAWASAKI"
+            model="Z650"
+        />
+        <Tile 
+            image={duca}
+            alt="DUCA"
             brand="DUCATI"
-            model="BIKE"
+            model="PANIGALE V4SP2"
         />
         <Tile 
-            image={image2}
-            alt="thrux"
-            brand="DUCATI"
-            model="BIKE"
+            image={yamaha}
+            alt="YAMAHA"
+            brand="YAMAHA"
+            model="MT-09"
         />
         <Tile 
-            image={image2}
-            alt="thrux"
-            brand="DUCATI"
-            model="BIKE"
+            image={kawa1000}
+            alt="kawa"
+            brand="KAWASAKI"
+            model="Z1000"
         />
         <Tile 
-            image={image1}
-            alt="thrux"
-            brand="THRUXTON RS"
-            model="BIKE"
+            image={trident}
+            alt="TRIUMPH"
+            brand="TRIUMPH"
+            model="TRIDENT 660"
         />
-
-        {/* {n.map((i) => {
-            return(<Tile 
-            image={i.image}
-            alt={i.alt}
-            name={i.name}
-            des={i.des}
-        />)
-        })} */}
+        <Tile 
+            image={street}
+            alt="kawa"
+            brand="TRIUMPH"
+            model="STREET TRIPLE RS"
+        />
         </div>
       </div>
     </>

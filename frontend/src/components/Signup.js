@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
+
   // Handles Form Inputs
   const [user, setUser] = useState({
     userName: "",
@@ -37,29 +41,46 @@ export default function Signup() {
   // Handles Form Submission
   const [isUser, setIsUser] = useState(false);
 
-  const handleSubmit = async () => {
-    const data = user;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const {userName, emailID, pword, cPword} = user;
 
-    const result = await fetch('http://localhost:4000/signup', {
+    const data = await fetch('http://localhost:4000/signup', {
       method: 'POST',
+      crossDomain: true,
       headers: {
-        'Content-Type': 'aplication/json'
+        mode: 'no-cors',
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:3000"
       },
-      body: JSON.stringify(data)
-    }).then((response) => response.json())
-    .then((data) => {
-      console.log("Success", data);
-    })
-    .catch((err) => {
-      console.error("Error: ", err);
-    });
+      body: JSON.stringify({userName, emailID, pword})
+    }).then(r => r.json().then(data => {
+      setIsUser(data.isUser);
+      navigate('/home');
+    }))
+
+    
+
+    // .then((res) => res.json())
+    // .then((data) => {
+    //   console.log("Success", data);
+    // })
+    // .catch((err) => {
+    //   console.error("Error: ", err);
+    // });
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      fetch('http://localhost:4000/signup')
-    }
-  }, [])
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await fetch('http://localhost:4000/signup');
+  //     const jsonData = await data.json();
+  //     setIsUser(jsonData.isUser);
+  //     console.log(isUser);
+  //   }
+
+  //   fetchData();
+  // }, [])
 
   return (
     <>
@@ -73,7 +94,7 @@ export default function Signup() {
                 <div className="col-lg-6">
                   <div className="mb-3 info-container">
                     <label htmlFor="userName" className="form-label mylabel">
-                      NAME
+                      NAME 
                     </label>
 
                     <input
@@ -88,7 +109,7 @@ export default function Signup() {
                     />
 
                     <div id="nameHelp" className="form-text">
-                      Please enter your full name.
+                      Please enter your full name. {isUser}
                     </div>
                   </div>
 
