@@ -7,12 +7,14 @@ const userSchema = new mongoose.Schema({
 });
 
 const bikeSchema = new mongoose.Schema({
-  name: String,
+  brand: String,
+  model: String,
   engineType: String,
   peakPower: String,
   transmission: String,
   gearBox: String,
   maxTorque: String,
+  rate: Number,
 });
 
 module.exports = {

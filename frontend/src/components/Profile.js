@@ -23,20 +23,6 @@ export default function Profile(props) {
 
   return (
     <>
-      {/* <ThemeProvider theme={uniTheme}>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardContent>
-              <ThemeProvider theme={welcomeTheme}>
-                <Typography variant="body1" component="div">
-                  WELCOME {props.name}
-                </Typography>
-              </ThemeProvider>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </ThemeProvider> */}
-
       <div className="card text-center" style={{width: "20rem"}}>
         <div className="card-body">
           <p className="card-text profile-txt">WELCOME {props.name}</p>
