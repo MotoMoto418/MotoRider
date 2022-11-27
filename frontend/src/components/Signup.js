@@ -109,7 +109,7 @@ export default function Signup() {
                     />
 
                     <div id="nameHelp" className="form-text">
-                      Please enter your full name. {isUser}
+                      Please enter your full name. <p>{isUser}</p>
                     </div>
                   </div>
 

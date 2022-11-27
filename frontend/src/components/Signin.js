@@ -15,9 +15,21 @@ export default function Signin() {
     setUser({ ...user, [name]: value });
   };
 
-  const handleSubmit = (event) => {
-    
-  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const {emailID, pword} = user;
+
+    const data = await fetch('http://localhost:4000/signup', {
+      method: 'POST',
+      crossDomain: true,
+      headers: {
+        mode: 'no-cors',
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify({emailID, pword})
+    })}
 
   return (
     <>

@@ -33,7 +33,7 @@ export default function Tile(props) {
       <div className="col-lg-3 tile-container">
         <div style={{ display: "flex", justifyContent: "center" }}>
           <ThemeProvider theme={uniTheme}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, minWidth: 345 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"

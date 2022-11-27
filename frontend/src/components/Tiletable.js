@@ -70,7 +70,7 @@ export default function Tiletable() {
             model="TRIDENT 660"
         />
         <Tile 
-            image={street}
+            image='https://ultimatemotorcycling.com/wp-content/uploads/2019/11/2020-Triumph-Thruxton-RS-First-Look-retro-sport-motorcycle-1.jpg'
             alt="kawa"
             brand="TRIUMPH"
             model="STREET TRIPLE RS"
