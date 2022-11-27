@@ -1,9 +1,9 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 import Navbar from "./Navbar";
 
 export default function Landing() {
-
   return (
     <Navbar
       elements=<ul className="navbar-nav">
@@ -20,10 +20,12 @@ export default function Landing() {
       </ul>
       bannerImage=<div className="landing-banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
         <div className="container-txt">
-          <p className="info-txt">
-            For riders, by riders.
-            Find the best bikes on the planet.
-          </p>
+          <Fade left>
+            <p className="info-txt">For riders, by riders.</p>
+            <Fade left>
+              <p className="info-txt">Find the best bikes on the planet.</p>
+            </Fade>
+          </Fade>
         </div>
       </div>
     />

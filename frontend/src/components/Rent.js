@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "./Navbar";
 import Profile from "./Profile";
+import RentPopUp from "./RentPopUp";
 
 import Image from "../resources/thrux-tile.png";
 
 export default function Rent() {
-  const handleClick = (event) => {
+  const [isClicked, setClicked] = useState(false);
+
+  const handleClickRent = (event) => {
     event.preventDefault();
-  };
+
+    setClicked(!isClicked);
+  }
 
   return (
     <>
@@ -87,10 +92,14 @@ export default function Rent() {
                         <a
                           className="btn btn-dark rent-btn container"
                           href="/rent"
-                          onClick={handleClick}
+                          onClick={handleClickRent}
                         >
                           RENT NOW
                         </a>
+
+                        <div>
+                          {isClicked ? <RentPopUp/> : null}
+                        </div>
                       </div>
                     </div>
                   </div>
